@@ -24,7 +24,7 @@ router.post( '/records', ( req, res ) => {
 router.delete( '/records/:id', ( req, res ) => {
     const id = req.params.id;
     recordsModel.destroy( { where: { id } } ).then( ( record ) => {
-        res.send( record );
+        res.status( 200 ).send( 'Record deleted' );
     } ).catch( ( err ) => {
         console.log( err );
     } );
